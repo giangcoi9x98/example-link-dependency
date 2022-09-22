@@ -1,7 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios'
+import { useEffect } from 'react';
+
 
 function App() {
+  const fetchData = async () => {
+    axios.get('https://apex-uat.position.exchange/trading/v1/exchange-info').then(res => console.log('res >> ', res))
+  }
+  useEffect(() => {
+    fetchData()
+  })
   return (
     <div className="App">
       <header className="App-header">
